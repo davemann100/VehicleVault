@@ -17,9 +17,9 @@ class User:
         self.updated_at = data['updated_at']
 
     @classmethod
-    def create_one( cls, data ):
-        query  = "INSERT INTO users ( first_name, last_name, email, password ) "
-        query += "VALUES( %(first_name)s, %(last_name)s, %(email)s, %(password)s );"
+    def create_one_user( cls, data ):
+        query  = "INSERT INTO users ( first_name, last_name, email, password) "
+        query += "VALUES( %(first_name)s, %(last_name)s, %(email)s, %(password)s);"
         result = connectToMySQL( DATABASE ).query_db( query, data )
         return result
     

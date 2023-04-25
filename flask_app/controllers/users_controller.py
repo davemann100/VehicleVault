@@ -17,7 +17,7 @@ def create_user():
         **request.form,
         "password" : encrypted_password
     }
-    user_id = User.create_one( data )   #INSERT INTO in SQL and return ID of user that registered
+    user_id = User.create_one_user( data )   #INSERT INTO in SQL and return ID of user that registered
     session["user_id"] = user_id        #store their ID in session
     session["first_name"] = request.form["first_name"]
     return redirect( "/success" )
