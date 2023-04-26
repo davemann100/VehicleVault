@@ -5,19 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Your Vehicle</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@300&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='/register_vehicle.css')}}">
 </head>
-<body class="bg-dark">
+<body>
+    <div class="row text-center text-primary mt-5">
+        <h1 class="text-dark">Welcome to <span>Vehicle Vault</span>, {{session['first_name']}}.</h1>
+    </div>
     <div class="row">
-        <h1 class="text-center text-primary mt-4">REGISTER YOUR CAR</h1>
+        <h2 class="text-center mt-4 subtitle">What do you drive?</h2>
+    </div>
+    <div class="row">
+        <div class="card col-4 p-4 rounded-5 border border-dark reg-form">
+            <h4>Register a vehicle</h4>
+            <form action="/vehicle-registered" method="POST">
+                <div class="mt-3">
+                    <label for="year_made" class="text-dark">
+                        Year:
+                    </label>
+                    <input class="form-control" type="number" name="year_made" value="2023">
+                    {% for message in get_flashed_messages( category_filter = ['error_year']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3">
+                    <label for="make" class="text-dark">
+                        Make:
+                    </label>
+                    <input class="form-control" type="text" name="make">
+                    {% for message in get_flashed_messages( category_filter = ['error_make']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3">
+                    <label for="model" class="text-dark">
+                        Model:
+                    </label>
+                    <input class="form-control" type="text" name="model">
+                    {% for message in get_flashed_messages( category_filter = ['error_model']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn text-light rounded-4 login-button">
+                        <i class="bi bi-car-front-fill">  Enter Vault</i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 
+
+
+
     <!-- LOGOUT BUTTON TO REDIRECT AND CLEAR SESSION -->
-    <form action="/logout" method="POST" class="text-center mt-4">
+    <!-- <form action="/logout" method="POST" class="text-center mt-4">
         <button type="submit" class="btn btn-warning">
             Logout
         </button>
-    </form>
+    </form> -->
 
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

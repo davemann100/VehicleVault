@@ -1,0 +1,38 @@
+*,body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Color Palate */
+/* --chefchaouen-blue BLUE: #4392f1ff;
+--magnolia LIGHT GREY: #ece8efff;
+--lavender-web: #e3ebffff;
+--alice-blue LIGHT BLUE: #e7f0ffff;
+--vermilion RED: #dc493aff; */
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Pathway Extreme', sans-serif;
+    height: 100%;
+    background: linear-gradient(45deg, #4392f1ff, #e7f0ffff);
+}
+span{
+    font-weight: bolder;
+}
+.subtitle{
+    font-style: italic;
+    color: #dc493aff;
+    font-weight: bolder;
+}
+/* REG FORM */
+.reg-form{
+    margin: 0 auto;
+    margin-top: 45px;
+}
+.login-button{
+    background-color: black;
+}
+.login-button:hover{
+    background-color: #dc493aff;
+}
