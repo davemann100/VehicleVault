@@ -1,0 +1,44 @@
+*,body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Color Palate */
+/* --chefchaouen-blue BLUE: #4392f1ff;
+--magnolia LIGHT GREY: #ece8efff;
+--lavender-web: #e3ebffff;
+--alice-blue LIGHT BLUE: #e7f0ffff;
+--vermilion RED: #dc493aff; */
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Pathway Extreme', sans-serif;
+    height: 100%;
+}
+/* Login Left Col */
+.main-left{
+    background-color: #4392f1ff;
+}
+.login-button{
+    background-color: black;
+}
+.login-button:hover{
+    background-color: #dc493aff;
+}
+/* Login Right Col */
+.title{
+    text-decoration: underline;
+}
+.sub-title{
+    font-style: italic;
+}
+.main-right{
+    background-color: #ece8efff;
+}
+.reg-button{
+    background-color: black;
+}
+.reg-button:hover{
+    background-color: #dc493aff;
+}

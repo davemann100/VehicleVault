@@ -37,23 +37,30 @@ class User:
     @staticmethod
     def validate_reg( data ):
         is_valid = True
-        if not NAME_REGEX.match( data["first_name"] ) and len( data["first_name"] ) < 2:
-            flash( "Minimum length 2 characters & Letters only!", "error_fname" )
+        if len( data["first_name"] ) < 2:
+            flash( "Minimum 2 characters", "error_fname" )
             is_valid = False
-        if not NAME_REGEX.match( data["last_name"] ) and len( data["last_name"] ) == 0:
-            flash( "Minimum length 2 characters & Letters only!", "error_lname" )
+        if not NAME_REGEX.match( data["first_name"] ):
+            flash( "Letters only", "error_fname" )
             is_valid = False
+        if len( data["last_name"] ) < 2:
+            flash( "Minimum 2 characters", "error_lname" )
+            is_valid = False
+        if not NAME_REGEX.match( data["last_name"] ):
+            flash( "Letters only", "error_lname" )
+            is_valid = False
+
         if not EMAIL_REGEX.match( data["email"] ):
-            flash( "You must provide a valid email!", "error_email" )
+            flash( "Provide a valid email", "error_email" )
             is_valid = False
         if User.get_one( data ) != None:
-            flash( "The email is already taken!", "error_email" )
+            flash( "Email already in use", "error_email" )
             is_valid = False
         if len( data["password"] ) < 8:
-            flash( "Minimum 8 character password required!", "error_password" )
+            flash( "Minimum 8 characters required", "error_password" )
             is_valid = False
         if data["password"] != data["password_confirmation"]:
-            flash( "Passwords do not match!", "error_password" )
+            flash( "Passwords do not match", "error_password" )
             is_valid = False
         return is_valid
     

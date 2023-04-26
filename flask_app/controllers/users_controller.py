@@ -5,7 +5,7 @@ from flask_app.models.user_model import User
 # --- LOGIN PAGE (RENDER) --- 
 @app.route( "/", methods=["GET"] )
 def display_login_registration():
-    return render_template( "index.html" )
+    return render_template( "main.html" )
 
 # --- LOGIN PAGE REGISTER(ACTION) --- 
 @app.route( "/user/new", methods=["POST"] )
