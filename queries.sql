@@ -6,8 +6,11 @@ SELECT * FROM gasoline;
 SELECT * FROM vehicle
 JOIN users ON users.id = user_id;
 
-DELETE FROM users
-WHERE id >= 2;
+SELECT * FROM vehicle_records
+WHERE user_id = 1;
 
-DELETE FROM vehicle
+DELETE FROM users
+WHERE id >= 1;
+
+DELETE FROM vehicle_records
 WHERE id >= 2;

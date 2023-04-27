@@ -13,7 +13,7 @@
 <body>
     <div class="row pt-4">
         <div class="col-2 text-center">
-            <img src="/flask_app/static/img/blank.jpg" alt="" class="profile">
+            <img src="{{url_for('static', filename='img/blank.jpg')}}" class="profile">
         </div>
         <div class="col-8 text-center">
             <h1 class="title">{{session['first_name']}}'s Dashboard</h1>
@@ -26,7 +26,7 @@
                 </button>
             </form>
             <!-- ACCOUNT SETTINGS BTN -->
-            <form action="/logout" method="POST">
+            <form action="/home" method="GET">
                 <button type="submit" class="btn mt-2 rounded-4 header-btn">
                     Account Settings
                 </button>
@@ -35,7 +35,7 @@
     </div>
     <div class="col-8 mt-5 d-flex justify-content-between align-items-end dash">
         <!-- GAS TRACKER BTN -->
-        <form action="/logout" method="POST">
+        <form action="/home" method="GET">
             <button type="submit" class="btn mt-2 rounded-4 dash-btn">
                 Gasoline Tracker
             </button>
@@ -49,6 +49,7 @@
         <div>
             <label for="filter">Filter by:</label>
             <select name="filter" class="rounded-3">
+                <option value="created_at">Date Created</option>
                 <option value="date">Date</option>
                 <option value="price">Price</option>
                 <option value="mileage">Mileage</option>
@@ -56,7 +57,7 @@
         </div>
     </div>
     <div class="card col-8 mt-4 rounded-4 dash-content">
-        <table class="table w-100 table-striped">
+        <table class="table w-100 table-striped table-hover">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">DATE</th>
@@ -64,30 +65,24 @@
                 <th scope="col">DESCRIPTION</th>
                 <th scope="col">MILEAGE</th>
                 <th scope="col">COSTS</th>
+                <th scope="col">EDIT</th>
               </tr>
             </thead>
             <tbody>
+              {% for record in all_records %}
               <tr>
-                <th scope="row">2018-07-13</th>
-                <td>Oil Change</td>
-                <td>LiquiMoly 5w40 Synthetic</td>
-                <td>76,182</td>
-                <td>$54.78</td>
+                <a href="/">
+                <th scope="row">{{record.date}}</th>
+                <td>{{record.title}}</td>
+                <td>{{record.description}}</td>
+                <td>{{record.mileage}}</td>
+                <td>{{record.price}}</td>
+                <td>
+                    <a href="/service-record/edit/{{record.id}}">View</a>
+                </td>
+                </a>
               </tr>
-              <tr>
-                <th scope="row">2018-07-13</th>
-                <td>Oil Change</td>
-                <td>LiquiMoly 5w40 Synthetic</td>
-                <td>76,182</td>
-                <td>$54.78</td>
-              </tr>
-              <tr>
-                <th scope="row">2018-07-13</th>
-                <td>Oil Change</td>
-                <td>LiquiMoly 5w40 Synthetic</td>
-                <td>76,182</td>
-                <td>$54.78</td>
-              </tr>
+              {% endfor %}
             </tbody>
         </table>
     </div>

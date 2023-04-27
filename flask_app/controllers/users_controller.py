@@ -1,6 +1,8 @@
 from flask import render_template, request, redirect, session, flash
 from flask_app import app
 from flask_app.models.user_model import User
+from flask_app.models.vehicle_record_model import Vehicle_Record
+
 
 # --- LOG/REG PAGE (RENDER) --- 
 @app.route( "/", methods=["GET"] )
@@ -25,8 +27,8 @@ def proccess_login():
 def show_home():
     if "user_id" not in session:
         return redirect( "/" )
-    #****INSERT CALL TO QUERY A SELECT OF ALL CURRENT USERS RECORDS HERE*****
-    return render_template( "home.html")
+    all_records = Vehicle_Record.get_user_records()
+    return render_template( "home.html", all_records=all_records)
 
 # --- LOGIN PAGE REGISTER (ACTION) --- 
 @app.route( "/user/new", methods=["POST"] )

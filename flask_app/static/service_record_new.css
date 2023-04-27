@@ -53,3 +53,14 @@ body{
 .dash-content{
     margin: 0 auto;
 }
+label{
+    font-weight: bolder;
+}
+.edit-btn{
+    color: white;
+}
+.edit-btn:hover{
+    background-color: #dc493aff;
+    color: black;
+    box-shadow: 2px 2px black;
+}
