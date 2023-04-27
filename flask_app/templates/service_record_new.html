@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Service Record</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@300&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='/service_record_new.css')}}">
+</head>
+<body>
+    <div class="row pt-4">
+        <div class="col-2 text-center">
+            <img src="/flask_app/static/img/blank.jpg" alt="" class="profile">
+        </div>
+        <div class="col-8 text-center">
+            <h1 class="title">Create Record</h1>
+        </div>
+        <div class="col-2 d-flex flex-column align-items-end">
+            <!-- LOGOUT BTN -->
+            <form action="/logout" method="POST">
+                <button type="submit" class="btn rounded-4 header-btn">
+                    Logout
+                </button>
+            </form>
+            <!-- HOME BUTTON -->
+            <form action="/home" method="GET">
+                <button type="submit" class="btn mt-2 rounded-4 header-btn">
+                    Home
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="col-8 mt-5 dash">
+        <!-- SAVE BTN -->
+        <form action="/home" method="GET">
+            <button type="submit" class="btn mt-2 rounded-4 dash-btn">
+                SAVE
+            </button>
+        </form>
+    </div>
+    <div class="col-8 mt-4 rounded-4 dash-content">
+
+        <div class="p-4 rounded-5 border border-dark reg-form">
+            <h4>Input Service Details Below</h4>
+            <form action="/vehicle-registered" method="POST">
+                <div class="mt-3">
+                    <label for="date" class="text-dark">
+                        Date:
+                    </label>
+                    <input class="form-control" type="date" name="date">
+                    {% for message in get_flashed_messages( category_filter = ['error_year']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3">
+                    <label for="title" class="text-dark">
+                        Title:
+                    </label>
+                    <input class="form-control" type="text" name="title">
+                    {% for message in get_flashed_messages( category_filter = ['error_make']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3">
+                    <label for="description" class="text-dark">
+                        Description:
+                    </label>
+                    <input class="form-control" type="text" name="description">
+                    {% for message in get_flashed_messages( category_filter = ['error_model']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3">
+                    <label for="mileage" class="text-dark">
+                        Mileage:
+                    </label>
+                    <input class="form-control" type="number" name="mileage">
+                    {% for message in get_flashed_messages( category_filter = ['error_model']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-3">
+                    <label for="price" class="text-dark">
+                        Total Cost:
+                    </label>
+                    <input class="form-control" type="number" name="price" step="any">
+                    {% for message in get_flashed_messages( category_filter = ['error_model']): %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn text-light bg-dark rounded-4 login-button">
+                        <i class="bi bi-car-front-fill">   Submit Record</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -25,6 +25,7 @@ body{
 }
 .login-button:hover{
     background-color: #dc493aff;
+    box-shadow: 2px 2px black;
 }
 /* LOGIN RIGHT COL */
 .title{
@@ -41,6 +42,7 @@ body{
 }
 .reg-button:hover{
     background-color: #dc493aff;
+    box-shadow: 2px 2px black;
 }
 /* FORM ANIMATION */
 form{

@@ -1,9 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app import DATABASE, EMAIL_REGEX, NAME_REGEX, app
+from flask_app import DATABASE, NAME_REGEX, app
 from flask import flash
-
-#create vehicle class for table
-#add validation for the form
 
 class Vehicle:
     def __init__( self, data ):

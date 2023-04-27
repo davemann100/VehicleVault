@@ -25,6 +25,7 @@ def proccess_login():
 def show_home():
     if "user_id" not in session:
         return redirect( "/" )
+    #****INSERT CALL TO QUERY A SELECT OF ALL CURRENT USERS RECORDS HERE*****
     return render_template( "home.html")
 
 # --- LOGIN PAGE REGISTER (ACTION) --- 
