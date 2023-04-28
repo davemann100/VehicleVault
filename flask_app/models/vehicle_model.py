@@ -19,8 +19,18 @@ class Vehicle:
         query  = "INSERT INTO vehicle ( year_made, make, model, user_id) "
         query += "VALUES( %(year_made)s, %(make)s, %(model)s, %(user_id)s);"
         result = connectToMySQL( DATABASE ).query_db( query, data )
-        print("---Vehicle Registered---")
         return result
+    
+    # --- GRAB ONE RECORD ---
+    @classmethod
+    def get_one_vehicle( cls, user_id ):
+        data = {
+            'id': user_id
+        }
+        query = """SELECT * FROM vehicle
+                WHERE id = %(id)s"""
+        results = connectToMySQL(DATABASE).query_db(query,data)
+        return results[0]
 
     # --- VALIDATE VEHICLE REGISTRATION ---
     @staticmethod

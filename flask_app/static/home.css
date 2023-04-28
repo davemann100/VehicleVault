@@ -15,14 +15,14 @@ html{
 body{
     font-family: 'Pathway Extreme', sans-serif;
     height: 100%;
-    background: linear-gradient(15deg, #4392f1ff, #ece8efff);
+    background: linear-gradient(15deg, #6ebbff, #ece8efff);
 }
 .profile{
     background-color: #dc493aff;
     border: 1px solid black;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
 }
 .title{
     text-decoration: wavy underline;
@@ -49,6 +49,9 @@ body{
     background-color: #dc493aff;
     color: white;
     box-shadow: 2px 2px black;
+}
+h1 span{
+    font-size: large;
 }
 .dash-content{
     margin: 0 auto;

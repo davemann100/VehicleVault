@@ -24,6 +24,8 @@ def submit_service_record():
 # --- EDIT ONE RECORD (RENDER) ---
 @app.route("/service-record/edit/<int:id>")
 def show_one(id):
+    if "user_id" not in session:
+        return redirect( "/" )
     this_record = Vehicle_Record.get_one(id)
     return render_template("service_record_edit.html", this_record=this_record)
 
@@ -40,7 +42,7 @@ def update(id):
 # --- DELETE ONE RECORD (ACTION) ---
 @app.route("/service-record/delete/<int:id>", methods=["GET"])
 def delete(id):
-    print("============record deleted=============")
+    if "user_id" not in session:
+        return redirect( "/" )
     Vehicle_Record.delete_vehicle_record(id)
-    
     return redirect( "/home" )

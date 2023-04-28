@@ -15,14 +15,17 @@ html{
 body{
     font-family: 'Pathway Extreme', sans-serif;
     height: 100%;
-    background: linear-gradient(15deg, #4392f1ff, #ece8efff);
+    background: linear-gradient(15deg, #16588E, #ece8efff);
+}
+.edit{
+    background: linear-gradient(15deg, #E7222E, #ece8efff);
 }
 .profile{
     background-color: #dc493aff;
     border: 1px solid black;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
 }
 .title{
     text-decoration: wavy underline;
@@ -55,6 +58,15 @@ body{
 }
 label{
     font-weight: bolder;
+}
+.submit-button{
+    background-color: black;
+    color: white;
+}
+.submit-button:hover{
+    background-color: #5cb85c;
+    color: white;
+    box-shadow: 2px 2px black;
 }
 .edit-btn{
     color: white;
