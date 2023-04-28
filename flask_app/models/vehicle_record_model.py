@@ -21,7 +21,6 @@ class Vehicle_Record:
                 VALUES( %(date)s, %(title)s, %(description)s, %(mileage)s, %(price)s, %(user_id)s);
                 """
         result = connectToMySQL( DATABASE ).query_db( query, data )
-        print("---Vehicle Record Submitted---")
         return result
     
     # --- GRAB ALL RECORDS --

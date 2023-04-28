@@ -31,8 +31,6 @@ def show_home():
 
     all_records = Vehicle_Record.get_user_records()
     one_vehicle = Vehicle.get_one_vehicle( session[ "user_id" ] )
-    print(all_records)
-    print(one_vehicle)
     return render_template( "home.html", all_records=all_records, one_vehicle=one_vehicle)
 
 # --- LOGIN PAGE REGISTER (ACTION) --- 

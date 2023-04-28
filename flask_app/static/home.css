@@ -3,12 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-/* Color Palate */
-/* --chefchaouen-blue BLUE: #4392f1ff;
---magnolia LIGHT GREY: #ece8efff;
---lavender-web: #e3ebffff;
---alice-blue LIGHT BLUE: #e7f0ffff;
---vermilion RED: #dc493aff; */
+
 html{
     height: 100%;
 }
@@ -48,6 +43,7 @@ body{
 .dash-btn:hover{
     background-color: #dc493aff;
     color: white;
+    text-shadow: 1px 1px black;
     box-shadow: 2px 2px black;
 }
 h1 span{
@@ -56,3 +52,24 @@ h1 span{
 .dash-content{
     margin: 0 auto;
 }
+.csv{
+    margin-right: 5px;
+    font-size: 20px;
+}
+.csv a{
+    margin-right: 15px;
+}
+.csv a:hover{
+    color: white;
+    text-shadow: 1px 1px black;
+    text-decoration: none;
+    font-style: italic;
+}
+
+
+/* Color Palate */
+/* --chefchaouen-blue BLUE: #4392f1ff;
+--magnolia LIGHT GREY: #ece8efff;
+--lavender-web: #e3ebffff;
+--alice-blue LIGHT BLUE: #e7f0ffff;
+--vermilion RED: #dc493aff; */
